@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %} Recipes site {% endblock %}
+
+{% block content %}
+{% if message %}
+<h2>{{message}}</h2>
+{% endif %}
+<div class="container my-5">
+    <h1 class="text-center mb-4">Рецепты дня</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for item in random_list %}
+        <!-- Recipe Card 1 -->
+        <div class="col mb-4">
+            <div class="card">
+                <img src="{{item.image.url}}" class="card-img-top" alt="Recipe Image">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.name}}</h5>
+                    <p class="card-text">{{item.short_desc}}</p>
+                    <a href="#" class="btn btn-primary">Узнать больше</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

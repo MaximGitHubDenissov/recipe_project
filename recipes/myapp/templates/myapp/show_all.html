@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for item in recipes %}
+<p>{{item.name}}</p>
+<p>{{item.description}}</p>
+<p>{{item.stages}}</p>
+<img src="{{item.image.url}}" class="img-fluid" alt="Recipe Image">
+{% endfor %}
+{% endblock %}
